@@ -14,9 +14,10 @@ FROM ubuntu:14.04
 MAINTAINER Hugo Rodger-Brown <hugo@yunojuno.com>
 
 # run all this on a single command so that we get a single layer
-RUN apt-get install -y curl git vim;\
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -;\
-    apt-get install -y nodejs;\
+RUN apt-get update; \
+    apt-get install -y curl git vim; \
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -; \
+    apt-get install -y nodejs; \
     npm i -g npm@latest
 
 # You should build on this image by adding in your own packages:
